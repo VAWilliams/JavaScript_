@@ -1,0 +1,11 @@
+.container {
+    width: 400px;
+    margin: auto auto;
+    text-align: center;
+    margin-top: 5%;
+    border: 1px lightgrey solid;
+  }
+  div div {
+    padding: 2%;
+    color: lightgrey;
+  }

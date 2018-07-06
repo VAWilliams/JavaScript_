@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Display Data Types</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div>
+      <h1> Open the <em>inspect bar</em><span>(ctrl+I)</span> and click on the <em>console tab</em></h1>
+    </div>
+
+    <script>
+
+      /*---exampleArray---*/
+      let exampleArray = new Array(3)
+      exampleArray[0] = "This is an Array."
+      exampleArray[1] = "It may contain many items."
+      exampleArray[2] = "This is how it is used."
+      console.log(exampleArray);
+
+      /*---exampleObject---*/
+      let exampleObject = new Object()
+      exampleObject = {
+        name: "Jeff",
+        surname: "UtiEf",
+        age: 25,
+      }
+      console.log(exampleObject);
+
+      /*---exampleString---*/
+      let exampleString = new String()
+      exampleString = "A text in inverted commas is a string."
+      console.log(exampleString);
+
+      /*---exampleNumber---*/
+      let exampleNumber = new Number()
+      exampleNumber = 25 //Any integer asigned to a variable is a number
+      console.log(exampleNumber);
+
+      /*---exampleBoolean---*/
+      let exampleBoolean = new Boolean()
+      exampleBoolean = true //Booleans can either bbe true or false
+      // exampleBoolean = false
+      console.log(exampleBoolean);
+
+      /*---exampleNull---*/
+      let exampleNull = null
+      console.log(exampleNull);
+
+      /*---exampleUndefined---*/
+      let exampleUndefined; //a value has not been giiven, thus it will be undefined
+      console.log(exampleUndefined);
+
+      /*---exampleDate---*/
+      let exampleDate = new Date()
+      console.log(exampleDate);
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Calculations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+        }
+        div {
+            display: grid;
+            font-family: 'Courier New', Courier, monospace;
+            color: slategray;
+        }
+        span {
+            background-color: slategray;
+            color: white;
+            padding: 5%;
+            margin: 5%;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Add</h1>
+        <span id="add"></span>
+    </div>
+
+    <div>
+        <h1>Subtract</h1>
+        <span id="subtract"></span>
+    </div>
+
+    <div>
+        <h1>Divide</h1>
+        <span id="divide"></span>
+    </div>
+
+    <div>
+        <h1>Multiply</h1>
+        <span id="multiply"></span>
+    </div>
+
+
+    <script>
+
+        function add(a, b) {
+            if (Number.isInteger(a) && Number.isInteger(b)) {
+                let answer = a + b;
+                console.log(a+' + '+b+' = '+answer)
+                document.getElementById('add').innerHTML = a+' + '+b+' = '+answer;
+            } else {
+                console.log('Addition: The numbers are not Integers!')
+                document.getElementById('add').innerHTML = 'The numbers are not Integers!';
+            }
+        }
+
+        function subtract(a, b) {
+            if (Number.isInteger(a) && Number.isInteger(b)) {
+                let answer = a - b;
+                console.log(a+' - '+b+' = '+answer)
+                document.getElementById('subtract').innerHTML = a+' - '+b+' = '+answer;
+            } else {
+                console.log('Subtraction: The numbers are not Integers!');
+                document.getElementById('subtract').innerHTML = 'The numbers are not Integers!';
+            }
+        }
+
+        function divide(a, b) {
+            if (Number.isInteger(a) && Number.isInteger(b)) {
+                let answer = a / b;
+                console.log(a+' / '+b+' = '+answer)
+                document.getElementById('divide').innerHTML = a+' / '+b+' = '+answer;
+            } else {
+                console.log('Division: The numbers are not Integers!')
+                document.getElementById('divide').innerHTML = 'The numbers are not Integers!';
+            }
+        }
+
+        function multiply(a, b) {
+            if (Number.isInteger(a) && Number.isInteger(b)) {
+                let answer = a * b;
+                console.log(a+' * '+b+' = '+answer)
+                document.getElementById('multiply').innerHTML = a+' * '+b+' = '+answer;
+            } else {
+                console.log('Multiplication: The numbers are not Integers!')
+                document.getElementById('multiply').innerHTML = 'The numbers are not Integers!';
+            }
+        }
+
+        add(2.4, 4);
+        subtract(4, 5);
+        divide(9.1, 3);
+        multiply(2, 6);
+
+
+    </script>
+    
+</body>
+</html>

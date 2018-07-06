@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Character Count</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        section {
+            display: grid;
+            text-align: center;
+            padding: 3% 5%;
+            background-color: seagreen;
+            margin: 1% 5%;
+            animation: pulse 5000ms infinite;
+        }
+        h1 {
+            color: #fff;
+        }
+        div {
+            display: grid;
+            grid-gap: 2px;
+        }
+        div div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        div div span {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        input {
+            padding: 5%;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+        }
+        input[value], select {
+            color: seagreen;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        option {
+            font-size: 16px;
+        }
+        button {
+            padding: 5%;
+            font-family: 'Courier New', Courier, monospace;
+            color: seagreen;
+            background-color: #fff;
+            font-size: 20px;
+            transition: background-color 1000ms ease-in-out, color 1500ms ease-in-out;
+            border: none;
+            box-shadow: 0 5px 50px -10px #fff;
+        }
+        button:hover {
+            background-color: seagreen;
+            color: #fff;
+            cursor: -webkit-grab;
+        }
+        button:active {
+            cursor: -webkit-grabbing;
+        }
+        span {
+            padding: 5%;
+            margin: 5% 0;
+            background-color: #fff;
+            border-radius: 2px;
+            color: seagreen;
+        }
+        span div {
+            padding: 2%;
+            margin: 5% 0;
+            background-color: seagreen;
+            color: #fff;
+        }
+        textarea {
+            padding: 5%;
+        }
+        @keyframes pulse {
+            0% {
+                background-color: seagreen;
+            }
+            50% {
+                background-color: rgb(61, 174, 110);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>Character Count</h1>
+        <div>
+            <div>
+                <span>
+                    Characters:<span id="char"></span>
+                </span>
+                <span>
+                    Whitespaces:<span id="space"></span>
+                </span>
+                <span>
+                    Words:<span id="word"></span>
+                </span>
+                <span>
+                    Sentences:<span id="sentence"></span>
+                </span>
+                <span>
+                    Paragraphs:<span id="para"></span>
+                </span>
+            </div>
+            <textarea oninput="count()" name="" id="get" cols="30" rows="10"></textarea>
+        </div>
+    </section>
+
+
+    <script>
+
+        let char = document.getElementById('char');
+        let space = document.getElementById('space');
+        let word = document.getElementById('word');
+        let sentence = document.getElementById('sentence');
+        let para = document.getElementById('para');
+
+
+        
+        function count() {
+
+            let get = document.getElementById('get').value;
+
+            if (get == '') {
+                char.innerHTML = '';
+                space.innerHTML = '';
+                word.innerHTML = '';
+                sentence.innerHTML = '';
+                para.innerHTML = '';
+            }
+
+            //char
+            let c = 0;
+
+            //space
+            let s = 0;
+
+            //word
+            let w = 0;
+
+            //sentence
+            let n = 0;
+
+            //para
+            let a = 0;
+            let p = 0;
+
+            for (let i = 0; i < get.length; i++) {
+                if ((get.charAt(i) != ' ') && (get.charAt(i) != '.')) {
+                    c++;
+                    char.innerHTML = c;
+                }
+            }
+
+            for ( let i = 0; i < get.length; i++) {
+                if (get.charAt(i) == ' ') {
+                    s++;
+                    space.innerHTML = s;
+                    w++;
+                    word.innerHTML = w;
+                }
+            }
+
+            for ( let i = 0; i < get.length; i++) {
+                if (get.charAt(i) == '.') {
+                    n++;
+                    sentence.innerHTML = n;
+                    a++;
+                }
+            }
+
+            for ( let i = 0; i < get.length; i++) {
+                if (a == 4) {
+                    a = 0;
+                    p++;
+                    para.innerHTML = p;
+                }
+            }
+
+            
+            
+
+            console.log(c);
+            console.log(s);
+            console.log(w);
+            console.log(n);
+            console.log(p);
+            
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

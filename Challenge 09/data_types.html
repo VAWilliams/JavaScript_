@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Data Types</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            display: grid;
+            font-family: 'Courier New', Courier, monospace;
+            color: slateblue;
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+        input, button, #output {
+            padding: 5%;
+            text-align: center;
+        }
+        button {
+            color: slateblue;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Data Types</h1>
+        <input type="" id="get">
+        <button id="button">Check</button>
+        <span id="output"></span>
+    </div>
+
+
+    <script>
+
+        document.getElementById('button').onclick =  function () {
+
+            let get = document.getElementById('get').value;
+            let getType = typeof(get);
+            let output = document.getElementById('output');
+
+            // let subs = get.substring(0,3);
+            // console.log(subs);
+            
+            
+            //date
+            if (get.length == 62) {
+                getType == 'date';
+                //It's not like I gave up... Tss
+            }
+
+            //array
+            else if ((get.charAt(0) == '\[') && (get.charAt(get.length-1) == '\]')) {
+                getType = 'array';
+            }
+
+            //object
+            else if ((get.charAt(0) == '\{') && (get.charAt(get.length-1) == '\}')) {
+                getType = 'object';
+            }
+
+            //string
+            else if ((get.charAt(0) == '\"') && (get.charAt(get.length-1) == '\"') || (get.charAt(0) == '\'') && (get.charAt(get.length-1) == '\'')) {
+                getType = 'string';
+            }
+
+            //boolean 
+            else if ((get == 'true') || (get == 'false')) {
+                getType = 'boolean'
+            }
+
+            //null
+            else if ((get == '0') || (get == 'null')) {
+                getType = 'null';
+            }
+
+
+            //undefined
+            else {
+                getType = 'undefined';
+                if (get == '') {
+                    getType = 'undefined'
+                }
+                else {
+                    //number
+                    get = Number(get);
+                    if (Number.isInteger(get)) {
+                    getType = 'number';
+                    }
+                }
+            }
+            // let nice = new Date;
+            // console.log(String(nice))
+
+            output.innerHTML = getType;
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="r">Red</div>
+      <div id="o">Orange</div>
+      <div id="y">Yellow</div>
+      <div id="g">Green</div>
+      <div id="b">Blue</div>
+      <div id="i">Indigo</div>
+      <div id="v">Violet</div>
+    </div>
+
+    <script>
+
+      redDiv = document.getElementById('r')
+      orangeDiv = document.getElementById('o')
+      yellowDiv = document.getElementById('y')
+      greenDiv = document.getElementById('g')
+      blueDiv = document.getElementById('b')
+      indigoDiv = document.getElementById('i')
+      violetDiv = document.getElementById('v')
+
+      rainbow = new Array(7)
+      rainbow[0] = "#f00";
+      rainbow[1] = "#ff6300";
+      rainbow[2] = "#ffff00";
+      rainbow[3] = "#008000";
+      rainbow[4] = "#0000ff";
+      rainbow[5] = "#4b0082";
+      rainbow[6] = "#bd31ff";
+
+      redDiv.onclick = function turnRed() {
+        redDiv.style.backgroundColor = rainbow[0]
+        redDiv.style.color = rainbow[0]
+      }
+      orangeDiv.onclick = function turnOrange() {
+        orangeDiv.style.backgroundColor = rainbow[1]
+        orangeDiv.style.color = rainbow[1]
+      }
+      yellowDiv.onclick = function turnYellow() {
+        yellowDiv.style.backgroundColor = rainbow[2]
+        yellowDiv.style.color = rainbow[2]
+      }
+      greenDiv.onclick = function turnGreen() {
+        greenDiv.style.backgroundColor = rainbow[3]
+        greenDiv.style.color = rainbow[3]
+      }
+      blueDiv.onclick = function turnBlue() {
+        blueDiv.style.backgroundColor = rainbow[4]
+        blueDiv.style.color = rainbow[4]
+      }
+      indigoDiv.onclick = function turnIndigo() {
+        indigoDiv.style.backgroundColor = rainbow[5]
+        indigoDiv.style.color = rainbow[5]
+      }
+      violetDiv.onclick = function turnViolet() {
+        violetDiv.style.backgroundColor = rainbow[6]
+        violetDiv.style.color = rainbow[6]
+      }
+
+    </script>
+
+  </body>
+</html>

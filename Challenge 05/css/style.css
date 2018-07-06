@@ -1,0 +1,53 @@
+body {
+  background-image: url("http://walldiskpaper.com/wp-content/uploads/2014/11/Green-Wallpapers-HD-Pics.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 8% 1fr 8%;
+  grid-template-rows: 20px 15% 60px 40px 1fr 60px;
+  /* background-color: #7abd31; */
+  background: inherit;
+  background-size: auto;
+  height: 500px;
+  width: 60%;
+  margin: 5% auto;
+  box-shadow: 0 0 70px 1px black;
+}
+span {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  top: 5%;
+  margin-left: 10%;
+  font-size: 50px;
+  color: white;
+  font-family: fantasy;
+}
+input {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  text-align: center;
+}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+button {
+  background-color: #3e7b06;
+  color: white;
+  border: 1.5px lightgrey solid;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  font-size: 20px;
+}
+div div {
+  background-color: #d3e97a;
+  color: #3e7b06;
+  font-size: 50px;
+  font-family: fantasy;
+  grid-column: 2/3;
+  grid-row: 5/6;
+  padding: 1%;
+}

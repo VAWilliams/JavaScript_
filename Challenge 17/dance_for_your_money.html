@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        section {
+            display: grid;
+            text-align: center;
+            padding: 3% 5%;
+            background-color: seagreen;
+            margin: 1% 5%;
+            animation: pulse 5000ms infinite;
+        }
+        h1 {
+            color: #fff;
+        }
+        div {
+            display: grid;
+            grid-gap: 2px;
+        }
+        div div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        div div span {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        ol {
+            text-align: left;
+            width: 20%;
+            margin: auto;
+        }
+        input {
+            padding: 5%;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+        }
+        input[value], select {
+            color: seagreen;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        option {
+            font-size: 16px;
+        }
+        button {
+            padding: 5%;
+            font-family: 'Courier New', Courier, monospace;
+            color: seagreen;
+            background-color: #fff;
+            font-size: 20px;
+            transition: background-color 1000ms ease-in-out, color 1500ms ease-in-out;
+            border: none;
+            box-shadow: 0 5px 50px -10px #fff;
+        }
+        button:hover {
+            background-color: seagreen;
+            color: #fff;
+            cursor: -webkit-grab;
+        }
+        button:active {
+            cursor: -webkit-grabbing;
+        }
+        span {
+            padding: 5%;
+            margin: 5% 0;
+            background-color: #fff;
+            border-radius: 2px;
+            color: seagreen;
+        }
+        span div {
+            padding: 2%;
+            margin: 5% 0;
+            background-color: seagreen;
+            color: #fff;
+        }
+        textarea {
+            padding: 5%;
+        }
+        @keyframes pulse {
+            0% {
+                background-color: seagreen;
+            }
+            50% {
+                background-color: rgb(61, 174, 110);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>Dance for your Money</h1>
+        <div>
+            <input id="get" type="text" maxlength="4">
+            <button onclick="dance()">Dance!</button>
+        </div>
+        <span>
+            <ol id="output">
+
+            </ol>
+        </span>
+    </section>
+
+
+    <script>
+
+        let output = document.getElementById('output');
+
+        let moves = ['sway', 'dab', 'twerk', 'reverse', 'nay-nay', 'gyp', 'mime', 'robot', 'jerk', 'shuffle'];
+
+        function dance() {
+            
+            output.innerHTML = '';
+
+            let get = document.getElementById('get').value;
+
+            if (get.length == 4) {
+                
+                for (let i = 0; i < get.length; i++) {
+                    output.innerHTML += '<li>' + moves[get.charAt(i)] + '</li>';
+                }
+            } 
+
+        }
+
+    </script>
+    
+</body>
+</html>

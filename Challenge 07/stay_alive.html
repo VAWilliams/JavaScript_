@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>While I am Alive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                margin-top: 30px;
+            }
+            * {
+                font-family: fantasy;
+                text-align: center;
+                margin: 0;
+            }
+            #container {
+                background-color: #f5f6f9;
+                color: #3d3f41;
+                width: 310px;
+                font-size: 20px;
+                margin: auto;
+                padding: 1%;
+            }
+            #timer {
+                font-size: 90px;
+            }
+            span {
+                color: #ff0000;
+            }
+            #title {
+                transition: transform 800ms ease-in-out;
+            }
+
+        </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1 id="title">COUNTDOWN</h1>
+        <div id="timer">
+            00:<span id="addZero"></span><span id="decrease">00</span>
+        </div>
+    </div>
+
+    <script>
+        let time = 15;
+        let decrease = document.getElementById('decrease');
+        let addZero = document.getElementById('addZero');
+        let title = document.getElementById('title');
+
+        let less = setInterval(lessTime, 1000)
+
+        title.name = 'off'
+
+        function lessTime() {
+
+            while (!(time < 0)) {
+
+                if (0 < time <= 15) {
+
+                    if (title.name == 'off') {
+                        title.style.transform = 'scale(1.2)'
+                        title.name = 'on'
+                    } else {
+                        title.style.transform = 'scale(1)'
+                        title.name = 'off';
+                    }
+                    
+
+                    if (time < 10){
+                        addZero.innerHTML = '0';
+                    }
+
+                    decrease.innerHTML = time;
+                    time--;
+                    break;
+
+                }
+
+            time--;
+
+            }
+
+        }
+
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+/*---Styling for: Directing to the console---*/
+
+body {
+  background-color: red;
+}
+
+h1 {
+  position: relative;
+  top: 100px;
+  font-size: 60px;
+  color: white;
+  margin: 0 5%;
+}
+
+em {
+  font-size: 120px;
+}
+
+span {
+  position: absolute;
+  font-size: 30px;
+  color: darkred;
+}
